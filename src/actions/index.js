@@ -11,6 +11,7 @@ const instance = axios.create({
 export const FETCH_COMPETITIONS = 'fetch_competitions';
 export const FETCH_COMPETITION_DETAILS = 'fetch_competition_detail';
 export const FETCH_COMPETITION_TABLE = 'fetch_competition_table';
+export const FETCH_FIXTURES_BY_LEAGUE_ID = 'fetch_fixtures_by_league_id';
 
 export function fetchCompetitions() {
     const request = instance.get('/competitions');
@@ -37,6 +38,15 @@ export function fetchCompetitionTable(id) {
 
     return {
         type: FETCH_COMPETITION_TABLE,
+        payload: request
+    }
+}
+
+export function fetchFixturesByLeagueId(id) {
+    const request = instance.get(`/competitions/${id}/fixtures`);
+
+    return {
+        type: FETCH_FIXTURES_BY_LEAGUE_ID,
         payload: request
     }
 }

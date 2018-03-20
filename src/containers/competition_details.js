@@ -6,6 +6,8 @@ import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import CompetitionTable from "./competition_table";
+import CompetitionInfo from '../components/widgets/competition_info';
+import CompetitionFixture from './competition_fixture';
 
 
 
@@ -15,12 +17,13 @@ class CompetitionDetails extends Component {
         return this.props.fetchCompetitionDetail(id);
     }
     componentWillReceiveProps() {
-
+        
     }
     
     render() {
 
         const { competition } = this.props;
+        console.log(competition);
 
         if(!competition) {
             return <div>Loading...</div>
@@ -28,13 +31,13 @@ class CompetitionDetails extends Component {
         return (
             <React.Fragment>
                 <h3>Details about: {competition.caption}</h3>
-                <ul className="list-group">
-                    <li className="list-group-item">Current season: {competition.year}</li>
-                    <li className="list-group-item">Current matchday: {competition.currentMatchday}</li>
-                    <li className="list-group-item">Number of matchdays: {competition.numberOfMatchdays}</li>
-                    <li className="list-group-item">Teams attending: {competition.numberOfTeams}</li>
-                </ul>
-                <CompetitionTable comp_id={competition.id} />
+                <div className="widget">
+                    <CompetitionTable comp_id={competition.id} />
+                </div>
+                <CompetitionInfo data={competition} />             
+                <div className="widget">
+                    <CompetitionFixture data={competition} />
+                </div>
             </React.Fragment>
         );
     }

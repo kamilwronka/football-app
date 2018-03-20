@@ -20,16 +20,18 @@ class CompetitionTable extends Component {
     renderTable() {
         const { teams } = this.props;
         console.log(teams);
+        const styling = "align-middle";
         return _.map(teams, elem => {
             return(
                 <tr key={elem.position}>
-                    <td className="align-middle">{elem.position}</td>
-                    <td className="align-middle"><img className="img-thumb" src={elem.crestURI} /></td>
-                    <td className="align-middle">{elem.playedGames}</td>
-                    <td className="align-middle">{elem.points}</td>
-                    <td className="align-middle">{elem.wins}</td>
-                    <td className="align-middle">{elem.draws}</td>
-                    <td className="align-middle">{elem.losses}</td>
+                    <th scope="row" className={styling}>{elem.position}</th>
+                    <td className={styling}><img className="mx-auto d-block img-thumb" src={elem.crestURI} /></td>
+                    <td className={styling}>{elem.teamName}</td>
+                    <td className={styling}>{elem.playedGames}</td>
+                    <td className={styling}>{elem.points}</td>
+                    <td className={styling}>{elem.wins}</td>
+                    <td className={styling}>{elem.draws}</td>
+                    <td className={styling}>{elem.losses}</td>
                 </tr>
             );
         });
@@ -39,18 +41,19 @@ class CompetitionTable extends Component {
 
 
     render() {
+        const styling = "align-middle";
         return(
             <React.Fragment>
-            <table className="table table-hover table-sm">
+            <table className="table table-striped table-sm table-dark">
                 <thead>
                 <tr>
-                    <th className="align-middle" scope="col">#</th>
-                    <th className="align-middle" scope="col">team</th>
-                    <th className="align-middle" scope="col">games</th>
-                    <th className="align-middle" scope="col">points</th>
-                    <th className="align-middle" scope="col">wins</th>
-                    <th className="align-middle" scope="col">draws</th>
-                    <th className="align-middle" scope="col">losses</th>
+                    <th className={styling} scope="col">#</th>
+                    <th colSpan="2" className={styling} scope="col">team</th>
+                    <th className={styling} scope="col">M</th>
+                    <th className={styling} scope="col">P</th>
+                    <th className={styling} scope="col">W</th>
+                    <th className={styling} scope="col">D</th>
+                    <th className={styling} scope="col">L</th>
                 </tr>
                 </thead>
                 <tbody>
