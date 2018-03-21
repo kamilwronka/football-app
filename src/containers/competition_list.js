@@ -26,7 +26,9 @@ class CompetitionsList extends Component {
     render() {
         return(
             <React.Fragment>
-            <h3 className="text-white mt-3">League list</h3>
+            <h3 className="text-white mt-3">
+                <Link to="/">Home</Link>
+            </h3>
                 <ul className="nav nav-pills nav-fill mt-3">
                     {this.renderList()}
                 </ul>

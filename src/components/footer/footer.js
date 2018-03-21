@@ -5,6 +5,7 @@ const Footer = () => {
     return(
         <div className="footer">
             <p className="text-white">Football-app-react <br/> version @0.1</p>
+            <a className="my-2 text-center" href="https://github.com/kamilwronka/football-app">Github repo</a>
         </div>
     );
 }
