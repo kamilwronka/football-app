@@ -10,34 +10,23 @@ import CompetitionInfo from '../components/widgets/competition_info';
 import CompetitionFixture from './competition_fixture';
 
 
-
 class CompetitionDetails extends Component {
     componentDidMount() {
         const { id} = this.props.match.params;
         return this.props.fetchCompetitionDetail(id);
     }
-    componentWillReceiveProps() {
-        
-    }
-    
     render() {
 
         const { competition } = this.props;
-        console.log(competition);
-
         if(!competition) {
             return <div>Loading...</div>
         }
         return (
             <React.Fragment>
                 <h3>Details about: {competition.caption}</h3>
-                <div className="widget">
                     <CompetitionTable comp_id={competition.id} />
-                </div>
-                <CompetitionInfo data={competition} />             
-                <div className="widget">
+                    <CompetitionInfo data={competition} />             
                     <CompetitionFixture data={competition} />
-                </div>
             </React.Fragment>
         );
     }

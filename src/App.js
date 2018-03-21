@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
 //page elems
 
 //import PageContent from './components/page-content/page-content';

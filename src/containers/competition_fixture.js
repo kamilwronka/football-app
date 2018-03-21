@@ -1,28 +1,66 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import _ from 'lodash';
 import { fetchFixturesByLeagueId } from '../actions';
 
 class CompetitionFixture extends Component {
     componentDidMount() {
-        console.log(this.props.data);
         const { id } = this.props.data;
         return this.props.fetchFixturesByLeagueId(id);
     }
+
+    componentWillReceiveProps(nextProps) {
+        const { id } = this.props.data;
+        if( id !== nextProps.data.id) {
+            return this.props.fetchFixturesByLeagueId(nextProps.data.id);
+        }
+    }
+
     renderFixtures() {
-        console.log(this.props.fixtures);
         const { currentMatchday } = this.props.data;
-        const { fixtures } = this.props;
-        return _.map(fixtures, elem => {
-            if(currentMatchday === elem.matchday) {
-                return <div>{elem.homeTeamName}</div>
-            }
-        }) 
+        const { fixtures } = this.props.fixtures;
+        if(!fixtures) {
+            return(
+                <tr><td colSpan="5">Loading...</td></tr>
+            );
+        }
+
+       return fixtures.map(elem => {
+           if(elem.matchday === currentMatchday) {
+               const { result } = elem;
+               return(
+                    <tr key={elem.homeTeamName}>
+                        <td>{elem.homeTeamName}</td>
+                        <td>{result.goalsHomeTeam === null ? '-' : result.goalsHomeTeam}</td>
+                        <td> : </td>
+                        <td>{result.goalsAwayTeam === null ? '-' : result.goalsAwayTeam}</td>
+                        <td>{elem.awayTeamName}</td>
+                    </tr>
+               );
+           }
+       })
     }
     render() {
+        const { currentMatchday } = this.props.data;
+        const styling="align-middle";
         return (
-            <div>{this.renderFixtures()}</div>
+            <div className="widget">
+            <table className="table table-striped table-sm table-dark">
+                <thead>
+                    <tr>
+                        <th colSpan="5">Matchday: {currentMatchday}</th>
+                    </tr>
+                <tr> 
+                    <th className={styling} scope="col">home</th>
+                    <th colSpan="3" className={styling} scope="col">result</th>
+                    <th className={styling} scope="col">away</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {this.renderFixtures()}
+                </tbody>
+            </table>
+            </div>
         );
     }
 }

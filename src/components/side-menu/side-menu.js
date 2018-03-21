@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
 
 import CompetitionList from '../../containers/competition_list';
 import Footer from '../../components/footer/footer';
