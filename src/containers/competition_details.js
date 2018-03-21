@@ -15,15 +15,25 @@ class CompetitionDetails extends Component {
         const { id} = this.props.match.params;
         return this.props.fetchCompetitionDetail(id);
     }
+    componentWillUnmount() {
+        //here i will reset state of app
+    }
     render() {
 
         const { competition } = this.props;
         if(!competition) {
-            return <div>Loading...</div>
+            return(
+                <div className="loader">
+                    <div className="item item-1"></div>
+                    <div className="item item-2"></div>
+                    <div className="item item-3"></div>
+                    <div className="item item-4"></div>
+                </div>
+            );
         }
         return (
             <React.Fragment>
-                <h3>Details about: {competition.caption}</h3>
+                <h3 className="my-2">Details about: {competition.caption}</h3>
                     <CompetitionTable comp_id={competition.id} />
                     <CompetitionInfo data={competition} />             
                     <CompetitionFixture data={competition} />
