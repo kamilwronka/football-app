@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCompetitions } from "../actions";
 import _ from 'lodash';
-import { Link, NavLink, withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 class CompetitionsList extends Component {
     componentDidMount() {
@@ -14,7 +14,7 @@ class CompetitionsList extends Component {
             const link = `/league/${elem.id}`;
             return (
                 <li className="nav-item" key={elem.id}>
-                    <NavLink className="nav-link" classActiveName="active" to={link}>
+                    <NavLink className="nav-link" activeClassName="active" to={link}>
                         {elem.caption}
                     </NavLink>
                 </li>

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import CompetitionDetails from '../../containers/competition_details';
-import CompetitionFixture from '../../containers/competition_fixture';
-import CompetitionTable from '../../containers/competition_table';
-import CompetitionTeams from '../../containers/competition_teams';
-import CompetitionDetail from '../../containers/competition_details';
+import CompetitionDetails from '../containers/competition_details';
+import CompetitionFixture from '../containers/competition_fixture';
+import CompetitionTable from '../containers/competition_table';
+import CompetitionTeams from '../containers/competition_teams';
+import CompetitionDetail from '../containers/competition_details';
 
 import Home from './home';
 

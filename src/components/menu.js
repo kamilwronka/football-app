@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { menuToggle } from '../../actions';
-import CompetitionList from '../../containers/competition_list';
-import { Link, NavLink } from 'react-router-dom';
+import CompetitionList from '../containers/competition_list';
+import { Link } from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
@@ -30,7 +27,7 @@ class SideMenu extends Component {
         return (
             <div className="page-header">
                 <Link to="/">
-                    <h3 className>Football App</h3>
+                    <h3>Football App</h3>
                 </Link>
                 <button onClick={this.onClickButton} className="hamburger">
                     <ReactCSSTransitionGroup
@@ -45,8 +42,8 @@ class SideMenu extends Component {
             <div onClick={this.onClickButton} className="page-menu">
             <ReactCSSTransitionGroup
                 transitionName="menu-toggle"
-                transitionEnterTimeout={300}
-                transitionLeaveTimeout={300}>
+                transitionEnterTimeout={400}
+                transitionLeaveTimeout={200}>
                 {this.state.showMenu ? <div className="page-menu-container"><CompetitionList /></div> : ""}      
             </ReactCSSTransitionGroup> 
             </div>

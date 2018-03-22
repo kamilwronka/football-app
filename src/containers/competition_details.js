@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCompetitionDetail } from "../actions";
-import _ from 'lodash';
 import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import BottomMenu from '../components/bottom_menu';
 
 class CompetitionDetails extends Component {
     componentDidMount() {
@@ -18,7 +14,6 @@ class CompetitionDetails extends Component {
     }
     render() {
         const { competition } = this.props;
-        const leagueId = this.props.match.params;
         if(!competition) {
             return(
                 <div className="loader">

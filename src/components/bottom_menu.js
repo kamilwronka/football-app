@@ -3,9 +3,7 @@ import BottomMenuElem from './bottom_menu-elem';
 
 export default (props) => {
     const { pathname } = window.location;  
-    console.log(pathname);
     const leagueId = pathname.split('/')[2];
-    console.log(leagueId);
     return(
         <div className="bottom-menu nav-pills">
             <BottomMenuElem name="info" link={leagueId} icon="info"/> 

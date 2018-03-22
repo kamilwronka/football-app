@@ -37,11 +37,10 @@ class CompetitionTable extends Component {
 
     }
     render() {
-        const styling = "align-middle";
         return(
             <div className="widget">
             <h3>League table</h3>
-            <table className="table table-striped table-dark table league-table">
+            <table className="table table-striped table-sm table-dark table league-table">
                 <thead>
                 <tr>
                     <th scope="col">#</th>

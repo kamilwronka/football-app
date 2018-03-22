@@ -4,7 +4,7 @@ const API_KEY = '91f2afa800d04848a0de608945ebf27c';
 const ROOT_URL = 'http://api.football-data.org/v1';
 
 const instance = axios.create({
-    baseURL: 'http://api.football-data.org/v1',
+    baseURL: ROOT_URL,
     headers: {'X-Auth-Token': API_KEY}
 });
 
