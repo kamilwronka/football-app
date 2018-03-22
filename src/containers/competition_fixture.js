@@ -45,7 +45,8 @@ class CompetitionFixture extends Component {
         const styling="align-middle";
         return (
             <div className="widget">
-            <table className="table table-striped table-sm table-dark">
+            <h3>League table</h3>
+            <table className="table table-striped table-dark">
                 <thead>
                     <tr>
                         <th colSpan="5">Matchday: {currentMatchday}</th>

@@ -5,7 +5,9 @@ const CompetitionInfo = (props) => {
     const progress = ((competition.currentMatchday/competition.numberOfMatchdays) * 100);
     return (
         <div className="widget">
+        <h3>League details</h3>
             <ul className="list-group">
+                    <li className="list-group-item">League: {competition.caption}</li>
                     <li className="list-group-item">Current season: {competition.year}</li>
                     <li className="list-group-item">Current matchday: {competition.currentMatchday}</li>
                     <li className="list-group-item">Number of matchdays: {competition.numberOfMatchdays}</li>

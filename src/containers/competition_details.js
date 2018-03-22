@@ -33,10 +33,9 @@ class CompetitionDetails extends Component {
         }
         return (
             <React.Fragment>
-                <h3 className="my-2">Details about: {competition.caption}</h3>
-                    <CompetitionTable comp_id={competition.id} />
-                    <CompetitionInfo data={competition} />             
+                    <CompetitionInfo data={competition} />   
                     <CompetitionFixture data={competition} />
+                    <CompetitionTable comp_id={competition.id} />                      
             </React.Fragment>
         );
     }

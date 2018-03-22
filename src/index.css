@@ -1,34 +1,19 @@
+
+@media (min-width: 576px) { 
+
+
+ }
+
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: #F5F5F5;
+  color: #F5F5F5;
   overflow-y: scroll;
   overflow-x: hidden;
+  background: #343a40;
 }
-body::-webkit-scrollbar {
-  width: 13px;
-  background-color:	#C8C8C8;
-}
-body::-webkit-scrollbar-track
-{
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  background-color: #D3D3D3;
-}
-body::-webkit-scrollbar-thumb
-{
-  background-color:  	#343a40;
-  background-image: -webkit-linear-gradient(45deg,
-  rgba(255, 255, 255, .1) 25%,
-  transparent 25%,
-  transparent 50%,
-  rgba(255, 255, 255, .1) 50%,
-  rgba(255, 255, 255, .1) 75%,
-  transparent 75%,
-  transparent)
-}
-
-
 h3 {
   text-align: center;
 }
@@ -37,94 +22,104 @@ h3 {
   width: auto;
   margin: 0 auto 0 auto;
 }
-
-.side-menu {
-  position: fixed;
-  left: 0;
+.page-header {
+  position: absolute;
   top: 0;
-  bottom: 0;
-  width: 300px;
-  min-width: 200px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 10;
+  background: #212529;
+  -webkit-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.75);
+}
+.page-header h3 {
+  position: absolute;
+  top: 13px;
+  left: 20px;
+}
+.page-header .page-menu {
+  position: absolute;
+  left: 0;
+  top: 60px;
+  width: 100%;
+  height: auto;
   overflow-y: scroll;
   background: #212529;
-  -webkit-box-shadow: 5px 0px 10px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 5px 0px 10px 0px rgba(0,0,0,0.75);
-  box-shadow: 5px 0px 10px 0px rgba(0,0,0,0.75);
+  z-index: 5;
 }
-.side-menu a {
+.page-header .hamburger {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  box-sizing: border-box;
   color: #FFFFFF;
+  background: transparent;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #FFFFFF;
+  border-radius: 3px;
+}
+.page-header .hamburger .close-icon {
+  display: none;
+}
+.page-menu .navigation-menu {
+  width: 100%;
+  overflow: scroll;
+}
+.page-menu .navigation-menu li {
+  width: 100%;
+}
+.page-menu a {
+  color: #FFFFFF;
+  width: 100%;
   border-bottom: 1px solid #343a40;
 }
-.side-menu a:hover {
+.page-menu a:hover {
   color: #F5F5F5;
   background: #343a40;
 }
-.side-menu p {
+.page-menu p {
   width: 100%;
   position: relative;
   bottom: 0;
   text-align: center;
   margin-top: 50px;
 }
-.side-menu::-webkit-scrollbar {
-  width: 13px;
-  background-color: #C8C8C8;
-}
-.side-menu::-webkit-scrollbar-track
-{
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  background-color:	#D3D3D3;
-}
-.side-menu::-webkit-scrollbar-thumb
-{
-  background-color:  #343a40;
-  background-image: -webkit-linear-gradient(45deg,
-  rgba(255, 255, 255, .1) 25%,
-  transparent 25%,
-  transparent 50%,
-  rgba(255, 255, 255, .1) 50%,
-  rgba(255, 255, 255, .1) 75%,
-  transparent 75%,
-  transparent)
-}
-.side-menu h4 {
+.page-menu h3 {
   text-align: center;
 }
 .page-content {
   position: absolute;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 300px;
+  width: 100%;
+  padding-top: 60px;
   justify-content: flex-start;
   align-items: flex-start;
 }
 .page-content h3 {
   width: 100%;
+  padding: 0 0 20px 0;
 }
 .widget {
-  width: 30%;
-  min-width: 30%;
-  min-height: 400px;
+  width: 100%;
+  overflow: auto;
   font-size: 1rem;
-  border-radius: 10px;
-  margin: 30px 0 30px 30px;
-  background: #343a40;
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
-}
-.widget table {
-  font-size: 0.8rem;
-  text-align: center;
-  margin: 20px;
-  width: 100%;
-}
-.widget .league-table {
-  text-align: left;
+  margin: 20px 0 0 0;
 }
 .widget ul {
-  margin: 20px;
   width: 100%;
+  color: #000000;
+}
+.widget h3 {
+  width: 100%;
+  color: #FFFFFF;
 }
 
 /*loader*/

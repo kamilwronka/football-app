@@ -22,7 +22,7 @@ class CompetitionTable extends Component {
             return(
                 <tr key={elem.position}>
                     <th scope="row">{elem.position}</th>
-                    <td><img alt={elem.teamName} className="d-block img-thumb" src={elem.crestURI} /></td>
+                    <td><img alt="" className="d-block img-thumb" src={elem.crestURI} /></td>
                     <td>{elem.teamName}</td>
                     <td>{elem.playedGames}</td>
                     <td>{elem.points}</td>
@@ -38,7 +38,8 @@ class CompetitionTable extends Component {
         const styling = "align-middle";
         return(
             <div className="widget">
-            <table className="table-sm table-dark table-striped league-table">
+            <h3>League table</h3>
+            <table className="table table-striped table-dark table league-table">
                 <thead>
                 <tr>
                     <th scope="col">#</th>

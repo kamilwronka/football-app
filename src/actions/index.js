@@ -13,6 +13,8 @@ export const FETCH_COMPETITION_DETAILS = 'fetch_competition_detail';
 export const FETCH_COMPETITION_TABLE = 'fetch_competition_table';
 export const FETCH_FIXTURES_BY_LEAGUE_ID = 'fetch_fixtures_by_league_id';
 
+export const SHOW_MENU = 'show_menu';
+
 export function fetchCompetitions() {
     const request = instance.get('/competitions');
 
@@ -48,5 +50,11 @@ export function fetchFixturesByLeagueId(id) {
     return {
         type: FETCH_FIXTURES_BY_LEAGUE_ID,
         payload: request
+    }
+}
+
+export function menuToggle() { 
+    return {
+        type: SHOW_MENU
     }
 }

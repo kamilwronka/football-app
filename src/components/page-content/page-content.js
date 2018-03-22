@@ -7,7 +7,7 @@ import Home from './home';
 class PageContent extends Component {
     render() {
         return(
-            <div className="page-content container">
+            <div className="page-content container-fluid">
                 <Switch>
                     <Route path="/league/:id" exact={true} component={CompetitionDetails}/>
                     <Route path="/" component={Home}/>
