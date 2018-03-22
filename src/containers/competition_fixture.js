@@ -5,7 +5,7 @@ import { fetchFixturesByLeagueId } from '../actions';
 
 class CompetitionFixture extends Component {
     componentDidMount() {
-        const { id } = this.props.data;
+        const { id } = this.props.match.params;
         return this.props.fetchFixturesByLeagueId(id);
     }
 

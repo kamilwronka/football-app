@@ -10,11 +10,6 @@ class CompetitionsList extends Component {
     }
 
     renderList() {
-        if(!this.props.competitions) {
-            return(
-                <div className="loader">Loading...</div>
-            )
-        }
         return _.map(this.props.competitions, elem => {
             const link = `/league/${elem.id}`;
             return (

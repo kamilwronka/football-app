@@ -6,15 +6,17 @@ import { withRouter } from 'react-router-dom';
 
 class CompetitionTable extends Component {
     componentDidMount() {
-        const id = this.props.comp_id;
+        console.log(this.props.match.params);
+        const id = this.props.match.params.id;
+        console.log(id);
         this.props.fetchCompetitionTable(id);
     }
-    componentWillReceiveProps(nextProps) {
-        const { comp_id } = this.props;
-        if(comp_id !== nextProps.comp_id) {
-            this.props.fetchCompetitionTable(nextProps.comp_id);
-        }
-    }
+   // componentWillReceiveProps(nextProps) {
+   //     const { id } = this.props.match.params;
+    //    if(comp_id !== nextProps.match.params) {
+   //         this.props.fetchCompetitionTable(nextProps.comp_id);
+    //    }
+   // }
 
     renderTable() {
         const { teams } = this.props;

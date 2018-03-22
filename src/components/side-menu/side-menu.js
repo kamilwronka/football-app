@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { menuToggle } from '../../actions';
 import CompetitionList from '../../containers/competition_list';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
@@ -29,18 +29,23 @@ class SideMenu extends Component {
     render() {
         return (
             <div className="page-header">
-                <h3 className>Football App</h3>
+                <Link to="/">
+                    <h3 className>Football App</h3>
+                </Link>
                 <button onClick={this.onClickButton} className="hamburger">
-
-                     {this.state.showMenu ? <i className="fas fa-times close-icon"></i> : <i className="fas fa-bars open-icon"></i>}
-                    
+                    <ReactCSSTransitionGroup
+                    transitionName="menu-toggle"
+                    transitionEnterTimeout={300}
+                    transitionLeaveTimeout={300}>
+                        {this.state.showMenu ? <i className="fas fa-times close-icon"></i> : <i className="fas fa-bars open-icon"></i>}
+                     </ReactCSSTransitionGroup> 
                     
                 </button>
 
             <div onClick={this.onClickButton} className="page-menu">
             <ReactCSSTransitionGroup
                 transitionName="menu-toggle"
-                transitionEnterTimeout={500}
+                transitionEnterTimeout={300}
                 transitionLeaveTimeout={300}>
                 {this.state.showMenu ? <div className="page-menu-container"><CompetitionList /></div> : ""}      
             </ReactCSSTransitionGroup> 
