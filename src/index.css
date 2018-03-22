@@ -208,7 +208,7 @@ h3 {
   opacity: 0.01;
 }
 
-.menu-toggle-enter.example-enter-active {
+.menu-toggle-enter.menu-toggle-enter-active {
   opacity: 1;
   transition: opacity 400ms ease-in;
 }
@@ -217,7 +217,7 @@ h3 {
   opacity: 1;
 }
 
-.menu-toggle-leave.example-leave-active {
+.menu-toggle-leave.menu-toggle-leave-active {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
 }
