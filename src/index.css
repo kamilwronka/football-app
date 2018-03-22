@@ -9,10 +9,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  color: #F5F5F5;
+  color: #FFFFFF;
   overflow-y: scroll;
   overflow-x: hidden;
-  background: #343a40;
+  background: #CFD8DC;
 }
 h3 {
   text-align: center;
@@ -45,9 +45,14 @@ h3 {
   top: 60px;
   width: 100%;
   height: auto;
-  overflow-y: scroll;
   background: #212529;
   z-index: 5;
+  transition: 0.2s;
+}
+.page-header .page-menu .page-menu.container {
+  position: fixed;
+  height: 100vh;
+  background: #212529;
 }
 .page-header .hamburger {
   position: absolute;
@@ -56,17 +61,17 @@ h3 {
   box-sizing: border-box;
   color: #FFFFFF;
   background: transparent;
-  width: 30px;
-  height: 30px;
+  width: 33px;
+  height: 33px;
   border: 1px solid #FFFFFF;
   border-radius: 3px;
 }
-.page-header .hamburger .close-icon {
-  display: none;
-}
 .page-menu .navigation-menu {
   width: 100%;
-  overflow: scroll;
+  padding-bottom: 30px;
+  -webkit-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.75);
 }
 .page-menu .navigation-menu li {
   width: 100%;
@@ -119,7 +124,7 @@ h3 {
 }
 .widget h3 {
   width: 100%;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 /*loader*/
@@ -196,4 +201,23 @@ h3 {
   25% {transform: translate(50px, -50px)} 
   50% {transform: translate(50px, 0)} 
   75% {transform: translate(0, -50px)} 
+}
+
+
+.menu-toggle-enter {
+  opacity: 0.01;
+}
+
+.menu-toggle-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 400ms ease-in;
+}
+
+.menu-toggle-leave {
+  opacity: 1;
+}
+
+.menu-toggle-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
