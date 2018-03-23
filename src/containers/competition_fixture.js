@@ -10,15 +10,17 @@ class CompetitionFixture extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const { id } = this.props.data;
-        if( id !== nextProps.data.id) {
-            return this.props.fetchFixturesByLeagueId(nextProps.data.id);
-        }
+       const { id } = this.props.match.params;
+       console.log(id, nextProps.match.params.id);
+        if( id !== nextProps.match.params.id) {
+           return this.props.fetchFixturesByLeagueId(nextProps.match.params.id);
+       }
     }
 
     renderFixtures() {
-        const { currentMatchday } = this.props.data;
+        const currentMatchday = this.props.data;
         const { fixtures } = this.props.fixtures;
+
         if(!fixtures) {
             return(
                 <tr><td colSpan="5">Loading...</td></tr>
@@ -41,12 +43,13 @@ class CompetitionFixture extends Component {
        })
     }
     render() {
-        const { currentMatchday } = this.props.data;
+        console.log(this.props);
+        const currentMatchday = this.props.data;
         const styling="align-middle";
         return (
             <div className="widget">
             <h3>League table</h3>
-            <table className="table table-striped table-dark">
+            <table className="table table-striped table-dark table-fixtures">
                 <thead>
                     <tr>
                         <th colSpan="5">Matchday: {currentMatchday}</th>

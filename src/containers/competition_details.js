@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchCompetitionDetail } from "../actions";
+
+
 import { withRouter } from 'react-router-dom';
 
 
 class CompetitionDetails extends Component {
-    componentDidMount() {
-        const { id } = this.props.match.params;
-        return this.props.fetchCompetitionDetail(id);
-    }
-    componentWillUnmount() {
-        //here i will reset state of app
-    }
     render() {
-        const { competition } = this.props;
+        const competition = this.props.data;
         if(!competition) {
             return(
                 <div className="loader">
@@ -50,8 +43,5 @@ class CompetitionDetails extends Component {
     }
 }
 
-function mapStateToProps({ competitions }, ownProps) {
-    return { competition:  competitions[ownProps.match.params.id] };
-}
 
-export default withRouter(connect(mapStateToProps, { fetchCompetitionDetail })(CompetitionDetails));
+export default CompetitionDetails;

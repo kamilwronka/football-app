@@ -6,9 +6,7 @@ import { withRouter } from 'react-router-dom';
 
 class CompetitionTable extends Component {
     componentDidMount() {
-        console.log(this.props.match.params);
         const id = this.props.match.params.id;
-        console.log(id);
         this.props.fetchCompetitionTable(id);
     }
    // componentWillReceiveProps(nextProps) {

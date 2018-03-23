@@ -129,6 +129,9 @@ h3 {
 .widget table {
   font-size: 0.8rem;
 }
+.widget .table-fixtures {
+  text-align: center;
+}
 .widget table tr td {
   vertical-align: middle;
 }
