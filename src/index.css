@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
 
 @media (min-width: 576px) { 
 
@@ -8,7 +9,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
   color: #FFFFFF;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -20,6 +21,12 @@ h3 {
 .img-thumb {
   height: 25px;
   width: auto;
+  margin: 0 auto 0 auto;
+}
+.img-team-details {
+  width: 50%;
+  height: auto;
+  display:block;
   margin: 0 auto 0 auto;
 }
 .page-header {
@@ -106,6 +113,7 @@ h3 {
   padding-top: 50px;
   justify-content: flex-start;
   align-items: flex-start;
+  transition: 0.3s;
 }
 .page-content h3 {
   width: 100%;
@@ -247,19 +255,31 @@ h3 {
 
 
 .menu-toggle-enter {
-  opacity: 0.01;
+
+  filter: blur(14px);
 }
 
 .menu-toggle-enter.menu-toggle-enter-active {
-  opacity: 1;
-  transition: opacity 400ms ease-in;
+
+  filter: blur(0);
+  transition: filter 400ms ease-in;
 }
 
 .menu-toggle-leave {
-  opacity: 1;
+  filter: blur(0);
 }
 
 .menu-toggle-leave.menu-toggle-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms cubic-bezier(.11,.94,.11,.94) ;
+  filter: blur(14px);
+  transition: filter 400ms ease-out;
+}
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
 }

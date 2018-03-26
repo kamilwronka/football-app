@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchFixturesByLeagueId } from '../actions';
 
+import Loader from '../components/loader';
+
 class CompetitionFixture extends Component {
     componentDidMount() {
         const { id } = this.props.match.params;
@@ -11,7 +13,6 @@ class CompetitionFixture extends Component {
 
     componentWillReceiveProps(nextProps) {
        const { id } = this.props.match.params;
-       console.log(id, nextProps.match.params.id);
         if( id !== nextProps.match.params.id) {
            return this.props.fetchFixturesByLeagueId(nextProps.match.params.id);
        }
@@ -21,13 +22,7 @@ class CompetitionFixture extends Component {
         const currentMatchday = this.props.data;
         const { fixtures } = this.props.fixtures;
 
-        if(!fixtures) {
-            return(
-                <tr><td colSpan="5">Loading...</td></tr>
-            );
-        }
-
-       return fixtures.map(elem => {
+        return fixtures.map(elem => {
            if(elem.matchday === currentMatchday) {
                const { result } = elem;
                return(
@@ -43,7 +38,14 @@ class CompetitionFixture extends Component {
        })
     }
     render() {
-        console.log(this.props);
+        const { fixtures } = this.props.fixtures;
+
+        if(!fixtures) {
+            return(
+                <Loader />
+            );
+        }
+
         const currentMatchday = this.props.data;
         const styling="align-middle";
         return (

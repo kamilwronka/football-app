@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-
-
 import { withRouter } from 'react-router-dom';
+
+import Loader from '../components/loader';
 
 
 class CompetitionDetails extends Component {
@@ -9,12 +9,7 @@ class CompetitionDetails extends Component {
         const competition = this.props.data;
         if(!competition) {
             return(
-                <div className="loader">
-                    <div className="item item-1"></div>
-                    <div className="item item-2"></div>
-                    <div className="item item-3"></div>
-                    <div className="item item-4"></div>
-                </div>
+                <Loader />
             );
         } 
         const progress = ((competition.currentMatchday/competition.numberOfMatchdays) * 100);

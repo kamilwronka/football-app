@@ -3,6 +3,7 @@ import { fetchCompetitionTable } from "../actions";
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { withRouter } from 'react-router-dom';
+import Loader from '../components/loader';
 
 class CompetitionTable extends Component {
     componentDidMount() {
@@ -35,6 +36,10 @@ class CompetitionTable extends Component {
 
     }
     render() {
+        const { teams } = this.props;
+        if(!teams) {
+            return <Loader />
+        }
         return(
             <div className="widget">
             <h3>League table</h3>
