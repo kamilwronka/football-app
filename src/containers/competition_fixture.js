@@ -25,8 +25,11 @@ class CompetitionFixture extends Component {
         return fixtures.map(elem => {
            if(elem.matchday === currentMatchday) {
                const { result } = elem;
+               const date = new Date(elem.date);
+               const options = {hour: "2-digit", minute: "2-digit", localeMatcher: "best fit" };
                return(
                     <tr key={elem.homeTeamName}>
+                       <td>{date.toLocaleDateString("pl", options)}</td>
                         <td>{elem.homeTeamName}</td>
                         <td>{result.goalsHomeTeam === null ? '-' : result.goalsHomeTeam}</td>
                         <td> : </td>
@@ -50,13 +53,13 @@ class CompetitionFixture extends Component {
         const styling="align-middle";
         return (
             <div className="widget">
-            <h3>League table</h3>
             <table className="table table-striped table-dark table-fixtures">
                 <thead>
                     <tr>
-                        <th colSpan="5">Matchday: {currentMatchday}</th>
+                        <th colSpan="6">Matchday: {currentMatchday}</th>
                     </tr>
                 <tr> 
+                    <th className={styling} scope="col">date</th>
                     <th className={styling} scope="col">home</th>
                     <th colSpan="3" className={styling} scope="col">result</th>
                     <th className={styling} scope="col">away</th>

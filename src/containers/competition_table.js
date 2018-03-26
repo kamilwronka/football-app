@@ -42,7 +42,6 @@ class CompetitionTable extends Component {
         }
         return(
             <div className="widget">
-            <h3>League table</h3>
             <table className="table table-striped table-sm table-dark table league-table">
                 <thead>
                 <tr>

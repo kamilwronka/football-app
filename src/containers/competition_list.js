@@ -13,8 +13,8 @@ class CompetitionsList extends Component {
         return _.map(this.props.competitions, elem => {
             const link = `/league/${elem.id}`;
             return (
-                <li className="nav-item" key={elem.id}>
-                    <NavLink className="nav-link" activeClassName="active" to={link}>
+                <li className="" key={elem.id}>
+                    <NavLink className="nav-link" activeClassName="nav-active" to={link}>
                         {elem.caption}
                     </NavLink>
                 </li>
@@ -26,8 +26,8 @@ class CompetitionsList extends Component {
     render() {
         return(
             <React.Fragment>
-                <ul className="nav navigation-menu nav-pills nav-fill mt-3">
-                    <NavLink to="/" exact className="nav-link text-center" activeClassName="active">Home</NavLink>
+                <ul className="navigation-menu">
+                    <li><NavLink to="/" exact className="" activeClassName="nav-active">Home</NavLink></li>
                     {this.renderList()}
                 </ul>
             </React.Fragment>

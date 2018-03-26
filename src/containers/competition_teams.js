@@ -19,26 +19,28 @@ class CompetitionTeams extends Component {
         return _.map(teams, (elem) => {
             const team_id = elem._links.self.href.split("/");
             const link = `/team/${team_id[5]}`;
-            return (
-                <Link key={elem.shortName} to={link}>
-                    <li className="nav-link nav-item">
-                        <img className="img-thumb" src={elem.crestUrl} alt="" /> {elem.name}
-                    </li>
-                </Link>
+            return (      
+                    <tr key={elem.shortName}>
+                        <td><img className="img-thumb" src={elem.crestUrl} alt="" /></td>
+                        <td> <Link to={link}> {elem.name} </Link></td>
+                    </tr>
             );
         })
     }
     render() {
         return(
             <div className="widget">
-            <h3>{this.props.data}</h3>
-            <p>Select a team in order to get detailed informations.</p>
-            <ul className="nav flex-column nav-pills nav-fill">
+            <table>
+                <thead>
+                <tr> 
+                    <th colSpan="2" scope="col">team</th>
+                </tr>
+                </thead>
+                <tbody>
                     {this.renderTeams()}
-            </ul>
+                </tbody>
+            </table>
             </div>
-
-
         );
     }
 }
