@@ -28,8 +28,6 @@ class CompetitionContainer extends Component {
         }
         return (
             <React.Fragment>
-                <TransitionGroup>
-                <CSSTransition key="id" classNames="fade" timeout={300}>
                 <Switch>
                     <Route path="/league/:id/teams" exact={true} render={(props) => <CompetitionTeams {...props} data={competition.caption} /> } />                 
                     <Route path="/league/:id/table" exact={true} component={CompetitionTable} />
@@ -41,8 +39,6 @@ class CompetitionContainer extends Component {
                         exact={true} 
                         render={(props) => <CompetitionFixture {...props} data={competition.currentMatchday}/>} />
                 </Switch>
-                </CSSTransition>
-                </TransitionGroup>
                 <BottomMenu data={this.props.match.params.id} />
             </React.Fragment>
         );

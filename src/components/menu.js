@@ -33,14 +33,14 @@ class SideMenu extends Component {
                         {this.state.showMenu ? <i className="fas fa-times close-icon"></i> : <i className="fas fa-bars open-icon"></i>}             
                 </button>
 
-            <div onClick={this.onClickButton} className="page-menu">
+
             <ReactCSSTransitionGroup
                 transitionName="menu-toggle"
                 transitionEnterTimeout={400}
-                transitionLeaveTimeout={300}>
-                {this.state.showMenu ? <div className="page-menu-container"><CompetitionList /></div> : ""}      
+                transitionLeaveTimeout={400}>
+                {this.state.showMenu ? <div onClick={this.onClickButton} className="page-menu"><CompetitionList /></div> : ""}      
             </ReactCSSTransitionGroup> 
-            </div>
+
             </div>
         );
     }
