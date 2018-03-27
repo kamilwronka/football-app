@@ -50,7 +50,7 @@ class SideMenu extends Component {
                 transitionName="menu-toggle"
                 transitionEnterTimeout={400}
                 transitionLeaveTimeout={400}>
-                {this.state.showMenu ? <div onClick={this.onClickButton} className="page-menu"><CompetitionList /></div> : ""}      
+                {this.state.showMenu ? <div onClick={this.onClickButton} className="page-menu"><CompetitionList type="nav"/></div> : ""}      
             </ReactCSSTransitionGroup> 
 
             </div>

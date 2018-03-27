@@ -7,14 +7,22 @@ import { NavLink, withRouter } from 'react-router-dom';
 class CompetitionsList extends Component {
     componentDidMount() {
         this.props.fetchCompetitions();
-    }
+    } 
 
     renderList() {
+        console.log(this.props);
+        if(this.props.type === "nav") {
+            const className = "nav-link";
+            const activeClassName = "nav-active";
+        } else {
+            const className = "";
+            const activeClassName = "";
+        }
         return _.map(this.props.competitions, elem => {
             const link = `/league/${elem.id}`;
             return (
-                <li className="" key={elem.id}>
-                    <NavLink className="nav-link" activeClassName="nav-active" to={link}>
+                <li className={this.className} key={elem.id}>
+                    <NavLink className={this.className} activeClassName={this.activeClassName} to={link}>
                         {elem.caption}
                     </NavLink>
                 </li>
@@ -27,7 +35,8 @@ class CompetitionsList extends Component {
         return(
             <React.Fragment>
                 <ul className="navigation-menu">
-                    <li><NavLink to="/" exact className="" activeClassName="nav-active">Home</NavLink></li>
+                {this.props.type === "nav" ?
+                    <li><NavLink to="/" exact className="" activeClassName="nav-active">Home</NavLink></li> : "" }
                     {this.renderList()}
                 </ul>
             </React.Fragment>

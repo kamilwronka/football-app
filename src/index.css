@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Oswald');
 
 @media (min-width: 576px) { 
 
@@ -9,7 +9,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Oswald', sans-serif;
   color: #FFFFFF;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -29,10 +29,24 @@ body:before {
   -o-background-size: cover;
   background-size: cover;
 }
-h3 {
+h1,h2,h3,h4,h5 {
   text-align: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: lighter;
   padding: 0;
   margin: 0;
+}
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.2rem;
 }
 .img-thumb {
   height: 25px;
@@ -71,6 +85,7 @@ h3 {
   border: 0;
   color: #FFFFFF;
   background: transparent;
+  outline: none;
 }
 
 .page-header .page-menu {
@@ -92,6 +107,7 @@ h3 {
 }
 .page-header .hamburger {
   position: absolute;
+  outline: none;
   top: 10px;
   right: 10px;
   box-sizing: border-box;
@@ -102,6 +118,7 @@ h3 {
   border: 0;
 }
 .page-menu .navigation-menu {
+  font-family: 'Open Sans Condensed', sans-serif;
   width: 100%;
   padding-bottom: 65px;
   list-style-type: none;
@@ -168,15 +185,38 @@ h3 {
 }
 .splash {
   width: 100%;
-  overflow: hidden;
   background: #C6CCCC;
-  height: calc(100vh - 130px);
   font-size: 1rem;
   padding: 40px;
   opacity: 0.9;
   text-align: center;
   color: #2F343B;
+  min-height: 100vh;
 }
+.splash ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px 0 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.splash ul li{
+  width: 48%;
+  margin-bottom: 10px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  background: #721121;
+}
+.splash ul li a {
+  width: 100%;
+  padding: 10px;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
 .widget {
   width: 100%;
   overflow: auto;
@@ -195,7 +235,7 @@ h3 {
   border-color: #962D3E;
 }
 .widget table {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   width: 100%;
   border: 0;
   border-collapse:collapse;
@@ -229,6 +269,7 @@ h3 {
 
 .bottom-menu {
   position: fixed;
+  font-family: 'Open Sans Condensed', sans-serif;
   bottom: 0;
   left: 0;
   width: 100%;
