@@ -13,9 +13,21 @@ body {
   color: #FFFFFF;
   overflow-y: scroll;
   overflow-x: hidden;
-  background-image: url('http://static.prsa.pl/images/7436d751-bc08-4853-8c66-03eb36d87267.jpg');
-
-  background-position: 75% -5%;
+}
+body:before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background: url(http://static.prsa.pl/images/7436d751-bc08-4853-8c66-03eb36d87267.jpg) no-repeat 75% 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 h3 {
   text-align: center;
@@ -34,7 +46,7 @@ h3 {
   margin: 0 auto 0 auto;
 }
 .page-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -43,19 +55,30 @@ h3 {
   background: #2F343B;
 }
 .page-header h3 {
-  position: absolute;
-  top: 10px;
-  left: 20px;
+  line-height: 50px;
 }
 .page-header a {
   color: #f5f5f5;
   border: 0;
+  text-decoration: none;
+}
+.page-header .back-button {
+  height: 33px;
+  width: 33px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  border: 0;
+  color: #FFFFFF;
+  background: transparent;
 }
 
 .page-header .page-menu {
-  position: absolute;
+  position: fixed;
+  overflow-y: scroll;
   left: 0;
   top: 50px;
+  bottom: 0;
   width: 100%;
   height: auto;
   background: #2F343B;
@@ -76,7 +99,7 @@ h3 {
   background: transparent;
   width: 33px;
   height: 33px;
-  border: 1px solid #FFFFFF;
+  border: 0;
 }
 .page-menu .navigation-menu {
   width: 100%;
@@ -94,7 +117,7 @@ h3 {
   line-height: 35px;
 }
 .page-menu .navigation-menu li .nav-active {
-  background: #dc3545;
+  background: #721121;
 }
 .page-menu a {
   color: #FFFFFF;
@@ -234,9 +257,19 @@ h3 {
   padding: 0;
 }
 .bottom-menu-active {
-  background: #dc3545;
+  background: #721121;
 }
 
+select {
+  border: 1px solid #721121;
+  margin: 0 5px 0 5px;
+  height: 30px;
+  padding: 0 10px 0 10px;
+  box-sizing: border-box;
+}
+select option:focus {
+  background: #721121;
+}
 /*loader*/
 
 .loader {
@@ -256,7 +289,7 @@ h3 {
 }
 
 .loader .item-1 {
-  background-color: #69747C;
+  background-color: #474056;
   top: 0;
   left: 0;
   z-index: 1;
@@ -264,14 +297,14 @@ h3 {
 }
 
 .loader .item-2 {
-  background-color: #6BAA75;
+  background-color: #dc3545;
   top: 0;
   right: 0;
   animation: item-2_move 2s cubic-bezier(.17,.67,1,.70) infinite;
 }
 
 .loader .item-3 {
-  background-color: #84DD63;
+  background-color: #721121;
   bottom: 0;
   right: 0;
   z-index: 1;
@@ -279,7 +312,7 @@ h3 {
 }
 
 .loader .item-4 {
-  background-color: #CBFF4D;
+  background-color: #242331;
   bottom: 0;
   left: 0;
   animation: item-4_move 2s cubic-bezier(.17,.67,1,.70) infinite;
@@ -315,7 +348,7 @@ h3 {
 
 
 .menu-toggle-enter {
-  transform: translateY(-100%);
+  transform: translateY(100%);
 }
 
 .menu-toggle-enter.menu-toggle-enter-active {
@@ -328,7 +361,7 @@ h3 {
 }
 
 .menu-toggle-leave.menu-toggle-leave-active {
-  transform: translateY(-100%);
+  transform: translateY(100%);
   transition: transform 300ms ease-out;
 }
 

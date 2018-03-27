@@ -7,7 +7,7 @@ export default (props) => {
         <div className="bottom-menu nav-pills">
             <BottomMenuElem name="info" link={id} icon="info"/> 
             <BottomMenuElem name="table" link={id} icon="table"/>
-            <BottomMenuElem name="fixtures" link={id} icon="futbol"/>
+            <BottomMenuElem name="results" link={id} icon="futbol"/>
             <BottomMenuElem name="teams" link={id} icon="users"/>
         </div>
     );

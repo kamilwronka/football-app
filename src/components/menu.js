@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CompetitionList from '../containers/competition_list';
 import { Link } from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { withRouter } from "react-router-dom";
 
 
 
@@ -15,6 +16,9 @@ class SideMenu extends Component {
         this.onClickButton = this.onClickButton.bind(this);
 
     }
+    handleBack = () => {
+        this.props.history.goBack();
+    }
     onClickButton = () => {
         this.state.showMenu ? this.setState({showMenu: false}) : this.setState({showMenu: true});
         window.scroll({
@@ -26,11 +30,19 @@ class SideMenu extends Component {
     render() {
         return (
             <div className="page-header">
+                {this.props.match.path === "/" && this.props.match.isExact === true ?
+                "" : 
+                    <button 
+                        onClick={this.handleBack} 
+                        className="back-button">
+                        <i className="fas fa-chevron-left fa-lg"></i>
+                    </button> 
+                }
                 <Link to="/">
-                    <h3>Football App</h3>
+                    <h3>football app</h3>
                 </Link>
                 <button onClick={this.onClickButton} className="hamburger">
-                        {this.state.showMenu ? <i className="fas fa-times close-icon"></i> : <i className="fas fa-bars open-icon"></i>}             
+                        <i className="fas fa-ellipsis-v fa-lg"></i>            
                 </button>
 
 
@@ -46,4 +58,4 @@ class SideMenu extends Component {
     }
 };
 
-export default SideMenu;
+export default withRouter(SideMenu);
