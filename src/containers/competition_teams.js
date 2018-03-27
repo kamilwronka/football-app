@@ -18,7 +18,7 @@ class CompetitionTeams extends Component {
         }
         return _.map(teams, (elem) => {
             const team_id = elem._links.self.href.split("/");
-            const link = `/team/${team_id[5]}`;
+            const link = `/team/${team_id[5]}/${elem.name}`;
             return (      
                     <tr key={elem.shortName}>
                         <td><img className="img-thumb" src={elem.crestUrl} alt="" /></td>
@@ -30,7 +30,7 @@ class CompetitionTeams extends Component {
     render() {
         return(
             <div className="widget">
-            <table>
+            <table className="teams-table">
                 <thead>
                 <tr> 
                     <th colSpan="2" scope="col">team</th>

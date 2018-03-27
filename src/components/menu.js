@@ -30,7 +30,9 @@ class SideMenu extends Component {
     }
     renderPageTitle() {
         const pathname = _.last(this.props.location.pathname.split("/"));
-        return pathname.charAt(0).toUpperCase() + pathname.slice(1);
+        if(typeof pathname !== Number) {
+            return pathname.charAt(0).toUpperCase() + pathname.slice(1);
+        }
     }
     render() {
         return (

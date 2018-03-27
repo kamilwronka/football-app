@@ -11,7 +11,7 @@ class PageContent extends Component {
         return(
             <div className="page-content container-fluid">
                 <Switch>
-                    <Route path="/team/:id" component={TeamDetails} />
+                    <Route path="/team/:id/:teamname" component={TeamDetails} />
                     <Route path="/league/:id" component={CompetitionContainer}/>
                     <Route path="/" component={Home}/>
                 </Switch>
