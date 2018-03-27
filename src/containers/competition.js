@@ -32,7 +32,7 @@ class CompetitionContainer extends Component {
                     <Route path="/league/:id/teams" exact={true} render={(props) => <CompetitionTeams {...props} data={competition.caption} /> } />                 
                     <Route path="/league/:id/table" exact={true} component={CompetitionTable} />
                     <Route 
-                        path="/league/:id" 
+                        path="/league/:id/overview" 
                         exact={true} 
                         render={(props) => <CompetitionDetails {...props} data={competition}/>} />
                         <Route path="/league/:id/results"

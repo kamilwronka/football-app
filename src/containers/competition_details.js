@@ -12,27 +12,48 @@ class CompetitionDetails extends Component {
                 <Loader />
             );
         } 
-        const progress = ((competition.currentMatchday/competition.numberOfMatchdays) * 100);
+        const progress = ((competition.currentMatchday/competition.numberOfMatchdays) * 100).toFixed(0);
         return (   
             <React.Fragment>
                 <div className="widget">
-                    <h3>League details</h3>
-                    <ul className="list-group">
-                        <li className="list-group-item">League: {competition.caption}</li>
-                        <li className="list-group-item">Current season: {competition.year}</li>
-                        <li className="list-group-item">Current matchday: {competition.currentMatchday}</li>
-                        <li className="list-group-item">Number of matchdays: {competition.numberOfMatchdays}</li>
-                        <li className="list-group-item">
-                        Season progress:
-                        <div className="progress">
-                            <div className="progress-bar progress-bar-animated progress-bar-striped bg-danger" role="progressbar" style={{width: progress + '%'}} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        </li>
-                        <li className="list-group-item">Teams attending: {competition.numberOfTeams}</li>
-                    </ul>
-                </div>   
-                <div>
-                </div>             
+                    <table className="details-table">
+                        <thead>
+                            <tr><th colSpan="2">{competition.caption}</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="logo" colSpan="2">
+                                    <img className="details-logo" src={`${process.env.PUBLIC_URL}/images/${competition.league}.svg`} />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Current season:</td>
+                                <td>{competition.year}</td>
+                            </tr>
+                            <tr>
+                                <td>Current matchday:</td>
+                                <td>{competition.currentMatchday}</td>
+                            </tr>
+                            <tr>
+                                <td>Number of matchdays:</td>
+                                <td>{competition.numberOfMatchdays}</td>
+                            </tr>
+                            <tr>
+                                <td>Season progress:</td>
+                                <td>
+                                    <div className="progressbar-container">
+                                        <p>{`${progress}%`}</p>
+                                        <div style={{width: `${progress}%`}} className="progressbar"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Teams attending:</td>
+                                <td>{competition.numberOfTeams}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>           
             </React.Fragment>
         );
     }

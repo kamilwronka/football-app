@@ -19,14 +19,18 @@ class CompetitionsList extends Component {
             const activeClassName = "";
         }
         return _.map(this.props.competitions, elem => {
-            const link = `/league/${elem.id}`;
-            return (
-                <li className={this.className} key={elem.id}>
-                    <NavLink className={this.className} activeClassName={this.activeClassName} to={link}>
-                        {elem.caption}
-                    </NavLink>
-                </li>
-            );
+            const link = `/league/${elem.id}/overview`;
+            if(elem.id === 464 || elem.id === 458) { 
+                //idk why it doesnt work with !== || !==
+            } else {
+                return (
+                    <li className={this.className} key={elem.id}>
+                        <NavLink className={this.className} activeClassName={this.activeClassName} to={link}>
+                            {elem.caption}
+                        </NavLink>
+                    </li>
+                );
+            }
         });
     }
 

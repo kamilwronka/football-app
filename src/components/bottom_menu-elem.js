@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export default (props) => {
     const {name} = props;
-    const link = `/league/${props.link}/${name !== "info" ? name : ""}`;
+    const link = `/league/${props.link}/${name}`;
     return(
         <NavLink to={link} exact className="bottom-menu-elem" activeClassName="bottom-menu-active" >
             <i className={`fas fa-${props.icon}`}></i>

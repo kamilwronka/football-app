@@ -258,6 +258,9 @@ h4 {
 .widget table thead tr:first-child {
   background: #2F343B;
   color: #FFFFFF;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.2rem;
+  font-weight: lighter;
 }
 .widget table tr:nth-child(2n) {
   background: #D0D6D6;
@@ -265,6 +268,13 @@ h4 {
 .widget h3 {
   width: 100%;
   color: #000000;
+}
+.widget .details-table tr td:first-child{
+  width: 35%;
+}
+.widget .details-table .logo {
+  min-height: 100px;
+  height: 100px;
 }
 
 .bottom-menu {
@@ -310,6 +320,36 @@ select {
 }
 select option:focus {
   background: #721121;
+}
+
+.progressbar-container {
+  width: 90%;
+  height: 25px;
+  background: #FFFFFF;
+  display: block;
+  margin: 0 auto 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  line-height: 25px;
+  position: relative;
+}
+.progressbar-container .progressbar {
+  background: #721121;
+  text-align: center;
+  font-size: 0.7rem;
+}
+.progressbar-container p {
+  position: absolute;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+.details-logo {
+  height: 200px;
+  width: auto;
+  margin: 20px auto 20px auto;
 }
 /*loader*/
 

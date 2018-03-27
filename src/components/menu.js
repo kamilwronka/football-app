@@ -3,6 +3,7 @@ import CompetitionList from '../containers/competition_list';
 import { Link } from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { withRouter } from "react-router-dom";
+import _ from 'lodash';
 
 
 
@@ -27,6 +28,10 @@ class SideMenu extends Component {
             behavior: "smooth"
         });
     }
+    renderPageTitle() {
+        const pathname = _.last(this.props.location.pathname.split("/"));
+        return pathname.charAt(0).toUpperCase() + pathname.slice(1);
+    }
     render() {
         return (
             <div className="page-header">
@@ -38,9 +43,9 @@ class SideMenu extends Component {
                         <i className="fas fa-chevron-left fa-lg"></i>
                     </button> 
                 }
-                <Link to="/">
-                    <h3>football app</h3>
-                </Link>
+                <h3>
+                    {this.props.match.path === "/" && this.props.match.isExact === true ? "Football App" : this.renderPageTitle()}
+                </h3>
                 <button onClick={this.onClickButton} className="hamburger">
                         <i className="fas fa-ellipsis-v fa-lg"></i>            
                 </button>
