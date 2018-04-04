@@ -43,6 +43,7 @@ class CompetitionsList extends Component {
                 {this.props.type === "nav" ?
                     <li><NavLink to="/" exact className="" activeClassName="nav-active">Home</NavLink></li> : "" }
                     {this.renderList()}
+                    <li><NavLink to="/about" exact className="" activeClassName="nav-active">About</NavLink></li>
                 </ul>
             </React.Fragment>
         );

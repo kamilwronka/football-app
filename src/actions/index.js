@@ -14,6 +14,8 @@ export const FETCH_COMPETITION_TABLE = 'fetch_competition_table';
 export const FETCH_FIXTURES_BY_LEAGUE_ID = 'fetch_fixtures_by_league_id';
 export const FETCH_COMPETITION_TEAMS = 'fetch_competition_teams';
 export const GET_TEAM_DETAILS = 'get_team_details';
+export const GET_TEAM_PLAYERS = 'get_team_players';
+export const GET_TEAM_FIXTURES = 'get_team_fixtures';
 
 export const SHOW_MENU = 'show_menu';
 
@@ -69,6 +71,22 @@ export function getTeamDetails(id) {
 
     return {
         type: GET_TEAM_DETAILS,
+        payload: request
+    }
+}
+export function getTeamPlayers(id) {
+    const request = instance.get(`/teams/${id}/players`);
+
+    return {
+        type: GET_TEAM_PLAYERS,
+        payload: request
+    }
+}
+export function getTeamFixtures(id) {
+    const request = instance.get(`/teams/${id}/fixtures`);
+
+    return {
+        type: GET_TEAM_FIXTURES,
         payload: request
     }
 }

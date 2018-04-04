@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { fetchCompetitionTable } from "../actions";
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import Loader from '../components/loader';
 
 class CompetitionTable extends Component {
     componentDidMount() {
-        const id = this.props.match.params.id;
+        const { id } = this.props.match.params;
         this.props.fetchCompetitionTable(id);
     }
    // componentWillReceiveProps(nextProps) {
@@ -20,11 +20,16 @@ class CompetitionTable extends Component {
     renderTable() {
         const { teams } = this.props;
         return _.map(teams, elem => {
+            const link = _.last(elem._links.team.href.split("/"));
             return(
                 <tr key={elem.position}>
                     <th scope="row">{elem.position}</th>
                     <td><img alt="" className="d-block img-thumb" src={elem.crestURI} /></td>
-                    <td>{elem.teamName}</td>
+                    <td>
+                        <Link to={`/team/${link}/${elem.teamName}`} >
+                            {elem.teamName}
+                        </Link>
+                    </td>
                     <td>{elem.playedGames}</td>
                     <td>{elem.points}</td>
                     <td>{elem.wins}</td>

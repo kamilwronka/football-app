@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getTeamDetails } from '../actions';
 
+import TeamPlayers from './team_players';
+
 class TeamDetails extends Component {
     componentDidMount() {
         const { id } = this.props.match.params;
@@ -9,17 +11,19 @@ class TeamDetails extends Component {
     }
     render() {
         const { team } = this.props;
+        const { id } = this.props.match.params;
         return(
             <div className="widget">
-            <img src={team.crestUrl} alt="" className="img-team-details" />
-            <h3>{team.name}</h3>
-                <ul className="list-group">
-                    <li className="list-group-item">Shortname: {team.shortName}</li>
-                    <li className="list-group-item">Squad value: {team.squadMarketValue ? team.squadMarketValue : 'Not available'}</li>
-                    <li className="list-group-item">League place: </li>
-                    <li className="list-group-item">Next match: </li>
-                    <li className="list-group-item">List of players </li>
-                </ul>
+                <div className="team-details">
+                <img src={team.crestUrl} alt="" className="img-team-details" />
+                <h3>{team.name}</h3>
+                    <ul className="">
+                        <li className="">Shortname: {team.shortName}</li>
+                        <li className="">Squad value: {team.squadMarketValue ? team.squadMarketValue : 'Not available'}</li>
+                        <li>More info will be added soon, I'm limited by API.</li>
+                    </ul>
+                </div>
+                <TeamPlayers id={id}/>
             </div>
         );
     }

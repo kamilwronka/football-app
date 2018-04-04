@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CompetitionList from '../containers/competition_list';
-import { Link } from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { withRouter } from "react-router-dom";
 import _ from 'lodash';

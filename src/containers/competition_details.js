@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
 
 import Loader from '../components/loader';
 
@@ -23,7 +22,7 @@ class CompetitionDetails extends Component {
                         <tbody>
                             <tr>
                                 <td className="logo" colSpan="2">
-                                    <img className="details-logo" src={`${process.env.PUBLIC_URL}/images/${competition.league}.svg`} />
+                                    <img alt="" className="details-logo" src={`${process.env.PUBLIC_URL}/images/${competition.league}.svg`} />
                                 </td>
                             </tr>
                             <tr>
