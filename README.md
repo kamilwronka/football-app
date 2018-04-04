@@ -1,6 +1,4 @@
-# Project Title
-
-Football App
+# Football App
 
 ## Description
 
@@ -16,6 +14,7 @@ yarn run build
 serve -s build
 
 **Dev**
+
 git clone https://github.com/kamilwronka/football-app.git
 yarn install or npm install
 yarn start
