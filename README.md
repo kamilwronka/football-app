@@ -12,16 +12,16 @@ Football app made with create-react-app and [football-data.org](https://www.foot
 
 **Prod**
 
-git clone https://github.com/kamilwronka/football-app.git
-yarn install or npm install
-yarn run build
-serve -s build
+* git clone https://github.com/kamilwronka/football-app.git
+* yarn install or npm install
+* yarn run build
+* serve -s build
 
 **Dev**
 
-git clone https://github.com/kamilwronka/football-app.git
-yarn install or npm install
-yarn start
+* git clone https://github.com/kamilwronka/football-app.git
+* yarn install or npm install
+* yarn start
 
 ## Built With
 
