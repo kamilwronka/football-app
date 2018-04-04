@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_KEY = '91f2afa800d04848a0de608945ebf27c';
-const ROOT_URL = 'http://api.football-data.org/v1';
+const ROOT_URL = 'https://api.football-data.org/v1';
 
 const instance = axios.create({
     baseURL: ROOT_URL,
